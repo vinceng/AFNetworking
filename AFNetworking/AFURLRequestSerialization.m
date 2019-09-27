@@ -45,11 +45,11 @@ typedef NSString * (^AFQueryStringSerializationBlock)(NSURLRequest *request, id 
     - returns: The percent-escaped string.
  */
 NSString * AFPercentEscapedStringFromString(NSString *string) {
-    static NSString * const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
-    static NSString * const kAFCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
+//    static NSString * const kAFCharactersGeneralDelimitersToEncode = @":#[]@"; // does not include "?" or "/" due to RFC 3986 - Section 3.4
+//    static NSString * const kAFCharactersSubDelimitersToEncode = @"!$&'()*+,;=";
 
     NSMutableCharacterSet * allowedCharacterSet = [[NSCharacterSet URLQueryAllowedCharacterSet] mutableCopy];
-    [allowedCharacterSet removeCharactersInString:[kAFCharactersGeneralDelimitersToEncode stringByAppendingString:kAFCharactersSubDelimitersToEncode]];
+//    [allowedCharacterSet removeCharactersInString:[kAFCharactersGeneralDelimitersToEncode stringByAppendingString:kAFCharactersSubDelimitersToEncode]];
 
 	// FIXME: https://github.com/AFNetworking/AFNetworking/pull/3028
     // return [string stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
